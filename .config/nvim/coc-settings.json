@@ -1,0 +1,14 @@
+{
+    "java.enabled": true,
+    "java.jdt.ls.java.home": "/home/bshepherd/bin/jdk-21.0.3+9",
+    "java.import.gradle.home": "/home/bshepherd/bin/gradle/gradle-8.7",
+    "java.import.gradle.version": "/home/bshepherd/bin/gradle/gradle-8.7",
+    "java.import.gradle.java.home": "/home/bshepherd/bin/jdk-21.0.3+9",
+    "java.autobuild.enabled": true,
+    "java.completion.enabled": true,
+    "java.jdt.ls.lombokSupport.enabled": true,
+    "explorer.keyMappings.global": {
+        "L": ["wait", "expand:recursive"],
+        "H": ["wait", "collapse:recursive"]
+    }
+}
