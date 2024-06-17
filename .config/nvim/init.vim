@@ -37,6 +37,12 @@ call plug#begin('~/.vim/plug.vim')
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
  Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 call plug#end()
-let g:dracula_colorterm = 0
-colorscheme catppuccin-macchiato " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+"let g:dracula_colorterm = 0
+"colorscheme catppuccin-macchiato " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+colorscheme dracula
 "autocmd VimEnter * if argc() == 0 && v:this_session == '' | :CocCommand explorer . | endif
+
+"Transparent background
+hi Normal guibg=none ctermbg=none
+hi NormalNC guibg=none ctermbg=none
+hi NormalSB guibg=none ctermbg=none
