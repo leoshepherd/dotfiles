@@ -1,6 +1,5 @@
 lua require('init')
-autocmd VimEnter * TSEnable highlight
-set nocompatible            " disable compatibility to old-time vi
+autocmd VimEnter * TSEnable highlight set nocompatible            " disable compatibility to old-time vi
 set showmatch               " show matching 
 "set ignorecase              " case insensitive 
 "set mouse=v                 " middle-click paste with 
@@ -39,7 +38,7 @@ call plug#begin('~/.vim/plug.vim')
 call plug#end()
 "let g:dracula_colorterm = 0
 "colorscheme catppuccin-macchiato " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
-colorscheme dracula
+colorscheme catppuccin-mocha
 "autocmd VimEnter * if argc() == 0 && v:this_session == '' | :CocCommand explorer . | endif
 
 "Transparent background
