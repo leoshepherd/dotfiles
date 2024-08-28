@@ -85,7 +85,7 @@ function! OpenFloatingWindow(width, height, buf, title)
 endfunction
 
 function! OpenTerminalWindow()
-    call OpenFloatingWindow(100, 30, nvim_create_buf(v:false, v:true), 'TERMINAL')
+    call OpenFloatingWindow(140, 40, nvim_create_buf(v:false, v:true), 'TERMINAL')
     terminal
     startinsert
 endfunction
