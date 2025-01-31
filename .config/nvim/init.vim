@@ -106,4 +106,6 @@ nmap <space>m : call GitModified()<CR>
 nmap <space>f : call GradleFailures()<CR>
 nmap <space>t : call OpenTerminalWindow()<CR>
 
+nmap <space>r <Plug>(coc-references)
 
+nmap <space>x <Cmd>CocCommand java.action.showTypeHierarchy<CR>
