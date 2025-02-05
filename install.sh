@@ -6,6 +6,23 @@ tmux_conf_file=~/.tmux.conf
 nvim_conf_dir=~/.config/nvim
 SOURCE_DIR=$(dirname $(realpath ${0}))
 
+command -v nvim >/dev/null
+
+echo "Checking neovim installation..."
+if [[ $? -ne 0 ]]; then
+    echo "Nvim is not installed"
+else
+    # listen here you lazy fuck, fix this eventually (Technically works)
+    nvim_version=$(nvim -version | head -1 | awk -F 'v' '{print $2}' |awk -F '.' '{print $1$2$3}')
+
+    if (( $(echo "$nvim_version < 90 " | bc) )); then
+        echo "Wrong version of Nvim is installed"
+        # TODO attempt to install correct neovim version
+    else
+        echo "Nvim version 0.9 or greater is installed"
+    fi
+fi
+
 echo "Searching for neovim config directory..."
 if [[ -d $nvim_conf_dir ]]; then
     echo "Directory found! Skipping nvim config install"
