@@ -1,4 +1,3 @@
-lua require('init')
 "enable treesitter syntax highlighting on vim startup
 autocmd VimEnter * TSEnable highlight 
 set nocompatible            " disable compatibility to old-time vi
