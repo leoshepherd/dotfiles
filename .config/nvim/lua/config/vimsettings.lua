@@ -19,17 +19,8 @@ vim.o.mouse=a                        -- enable mouse click
 vim.o.clipboard=unnamedplus          -- using system clipboard
 vim.o.ttyfast = true                 -- Speed up scrolling in Vim
 
-local Plug = vim.fn['plug#']
-
-vim.call('plug#begin')
-    Plug('dracula/vim', { as = 'dracula' })
-    Plug('nvim-treesitter/nvim-treesitter', { ["do"] = ':TSUpdate' })
-    Plug('neoclide/coc.nvim', { branch = 'release' })
-    Plug('catppuccin/nvim', { as = 'catppuccin' })
-vim.call('plug#end')
-
 vim.cmd[[
-colorscheme catppuccin
+colorscheme catppuccin 
 hi Normal guibg=none ctermbg=none
 hi NormalNC guibg=none ctermbg=none
 hi NormalSB guibg=none ctermbg=none
