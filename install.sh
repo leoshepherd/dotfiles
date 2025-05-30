@@ -2,9 +2,14 @@
 
 echo "Beginning dotfile setup install"
 
-tmux_conf_file=~/.tmux.conf
-nvim_conf_dir=~/.config/nvim
+tmux_conf_file=/home/$USER/.tmux.conf
+nvim_conf_dir=/home/$USER/.config/nvim
 SOURCE_DIR=$(dirname $(realpath ${0}))
+
+if [ "$USER" = "root" ]; then
+    echo "Cannot perform install as root. Exiting..."
+    exit 1
+fi
 
 command -v nvim >/dev/null
 
@@ -16,8 +21,20 @@ else
     nvim_version=$(nvim -version | head -1 | awk -F 'v' '{print $2}' |awk -F '.' '{print $1$2$3}')
 
     if (( $(echo "$nvim_version < 90 " | bc) )); then
-        echo "Wrong version of Nvim is installed"
-        # TODO attempt to install correct neovim version
+        echo "Insufficient version of Nvim is installed (version < .9)"
+        if command -v apt &> /dev/null; then
+          echo "APT"
+        elif command -v yum &> /dev/null; then
+          echo "YUM"
+        elif command -v dnf &> /dev/null; then
+          echo "DNF"
+        elif command -v pacman &> /dev/null; then
+          echo "Pacman"
+        elif command -v zypper &> /dev/null; then
+          echo "Zypper"
+        else
+          echo "Unknown package manager"
+        fi
     else
         echo "Nvim version 0.9 or greater is installed"
     fi
