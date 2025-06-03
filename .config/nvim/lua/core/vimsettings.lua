@@ -18,10 +18,3 @@ vim.cmd[[filetype plugin indent on]] -- allow auto-indenting depending on file t
 vim.o.mouse=a                        -- enable mouse click
 vim.o.clipboard=unnamedplus          -- using system clipboard
 vim.o.ttyfast = true                 -- Speed up scrolling in Vim
-
-vim.cmd[[
-colorscheme catppuccin 
-hi Normal guibg=none ctermbg=none
-hi NormalNC guibg=none ctermbg=none
-hi NormalSB guibg=none ctermbg=none
-]]
