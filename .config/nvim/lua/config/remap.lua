@@ -14,6 +14,8 @@ keyset("n", "<M-j>", "<C-w>j")
 keyset("n", "<M-k>", "<C-w>k")
 keyset("n", "<M-l>", "<C-w>l")
 
+keyset("t", "<esc><esc>", "<c-\\><c-n>")
+
 -- Use Tab for trigger completion with characters ahead and navigate
 -- NOTE: There's always a completion item selected by default, you may want to enable
 -- no select by setting `"suggest.noselect": true` in your configuration file
