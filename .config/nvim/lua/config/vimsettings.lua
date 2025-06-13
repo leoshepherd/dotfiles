@@ -1,3 +1,4 @@
+local vim = _G.vim
 -- enable treesitter syntax highlighting on vim startup
 vim.cmd[[autocmd VimEnter * TSEnable highlight]]
 vim.o.showmatch  = true              -- show matching 

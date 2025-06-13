@@ -1,4 +1,4 @@
-local keyset = vim.keymap.set
+local keyset = _G.vim.keymap.set
 
 keyset("n", "<space>e", ":CocCommand explorer<cr>")
 keyset("n", "<space>b", ":CocCommand git.showBlameDoc<cr>")
@@ -14,6 +14,7 @@ keyset("n", "<M-j>", "<C-w>j")
 keyset("n", "<M-k>", "<C-w>k")
 keyset("n", "<M-l>", "<C-w>l")
 
+-- Double tap Escape to leave terminal insert
 keyset("t", "<esc><esc>", "<c-\\><c-n>")
 
 -- Use Tab for trigger completion with characters ahead and navigate
@@ -28,3 +29,6 @@ keyset("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
 -- Make <CR> to accept selected completion item or notify coc.nvim to format
 -- <C-g>u breaks current undo, please make your own choice
 keyset("i", "<cr>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
+
+keyset("n", "<space>ff", require('telescope.builtin').find_files)
+keyset("n", "<space>lg", require('telescope.builtin').live_grep)

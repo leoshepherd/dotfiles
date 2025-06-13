@@ -90,13 +90,14 @@
     "git.signPriority": 1,
     "diagnostic.checkCurrentLine": true,
     "diagnostic-languageserver.enable": true,
-    "diagnostic.hintSign": "H",
-    "diagnostic.infoSign": "I",
-    "diagnostic.warningSign": "W",
-    "diagnostic.errorSign": "E",
+    "diagnostic.hintSign": "",
+    "diagnostic.infoSign": "󰰄",
+    "diagnostic.warningSign": "",
+    "diagnostic.errorSign": "",
     "diagnostic.enableMessage": "always",
     "diagnostic.virtualText": false,
     "diagnostic.virtualTextCurrentLineOnly": true,
+    "diagnostic.messageDelay": 0,
     "diagnostic-languageserver.filetypes": {
         "vim": "vint",
         "email": "languagetool",
@@ -165,6 +166,10 @@
     "vetur.validation.style": true,
     "vetur.validation.interpolation": true,
     "vue.format.enable": true,
+    "explorer.git.icon.rootStatus.untracked": "󰰨"
+    "explorer.git.icon.status.added": ""
+    "explorer.git.icon.status.modified": ""
+    "explorer.git.icon.status.deleted": "󰧧"
     "explorer.keyMappings.global": {
         "L": ["wait", "expand:recursive"],
         "H": ["wait", "collapse:recursive"]
