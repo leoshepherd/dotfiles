@@ -1,4 +1,3 @@
---require('plugins.vim-plug')
 require('config.lazy')
 require('functions.check-backspace')
 require('functions.floating-terminal')
