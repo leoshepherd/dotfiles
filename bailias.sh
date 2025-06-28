@@ -1,8 +1,16 @@
-export PS1='\[\033[36m\] \u\[\033[m\]\[\033[32m\]  \h:\[\033[31;1m\]  \w\[\033[37m\]$(parse_git_branch)\[\033[m\]\n '
+export PS1='\[\033[36m\] \u\[\033[32m\]  \h:\[\033[31;1m\]  \w\[\033[37m\]$(parse_git_branch)\[\033[m\]\n '
 
 alias vi='nvim'
 alias gs='git status'
 alias ll='ls -la --color=auto'
+
+grs() {
+    git reset --soft HEAD~$1
+}
+
+grh() {
+    git reset --hard HEAD~$1
+}
 
 die() {
     if [ -z $(pgrep -f $1) ]; then
