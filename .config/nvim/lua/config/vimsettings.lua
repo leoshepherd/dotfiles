@@ -13,7 +13,7 @@ vim.o.autoindent = true              -- indent a new line the same amount as the
 vim.o.number = true                  -- add line numbers
 vim.o.relativenumber = true          -- add line numbers
 vim.o.wildmenu = true
-vim.o.cc = '80'                      -- set an 80 column border for good coding style
+--vim.o.cc = '80'                      -- set an 80 column border for good coding style
 vim.o.splitright = true
 vim.cmd[[filetype plugin indent on]] -- allow auto-indenting depending on file type
 vim.o.mouse=a                        -- enable mouse click
