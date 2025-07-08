@@ -30,6 +30,8 @@ keyset("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
 -- <C-g>u breaks current undo, please make your own choice
 keyset("i", "<cr>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
 
+keyset("n", "<space>k", show_docs)
+
 keyset("n", "<space>ff", require('telescope.builtin').find_files)
 keyset("n", "<space>fg", require('telescope.builtin').git_files)
 keyset("n", "<space>lg", require('telescope.builtin').live_grep)
