@@ -1,5 +1,27 @@
 #!/usr/bin/env bash
 
+function install_nvim() {
+    if command -v apt &> /dev/null; then
+      echo "APT"
+      exit 0
+    elif command -v dnf &> /dev/null; then
+      echo "DNF"
+      exit 0
+    elif command -v yum &> /dev/null; then
+      echo "YUM"
+      exit 0
+    elif command -v pacman &> /dev/null; then
+      echo "Pacman"
+      exit 0
+    elif command -v zypper &> /dev/null; then
+      echo "Zypper"
+      exit 0
+    else
+      echo "Unknown package manager"
+      exit 1
+    fi
+}
+
 echo "Beginning dotfile setup install"
 
 tmux_conf_file=/home/$USER/.tmux.conf
@@ -11,30 +33,30 @@ if [ "$USER" = "root" ]; then
     exit 1
 fi
 
-command -v nvim >/dev/null
-
 echo "Checking neovim installation..."
-if [[ $? -ne 0 ]]; then
-    echo "Nvim is not installed"
-else
+if command -v nvim >/dev/null; then
+#    echo "Nvim is Installed, continuing to version check..."
+#else
+    echo "Nvim is not installed!"
+    read -p "Would you like to attempt package manager installation? (y/n) " response
+    case "$response" in 
+        [yY] | [yY][eE][sS])
+            echo "Attempting install of Nvim"
+            # install nvim
+            install_nvim
+            ;;
+        [nN] | [nN][oO])
+            echo "Skipping install"
+            ;;
+        *)
+            echo "Invalid input. Skipping install"
+            ;;
+    esac
     # listen here you lazy fuck, fix this eventually (Technically works)
     nvim_version=$(nvim -version | head -1 | awk -F 'v' '{print $2}' |awk -F '.' '{print $1$2$3}')
 
     if (( $(echo "$nvim_version < 90 " | bc) )); then
         echo "Insufficient version of Nvim is installed (version < .9)"
-        if command -v apt &> /dev/null; then
-          echo "APT"
-        elif command -v yum &> /dev/null; then
-          echo "YUM"
-        elif command -v dnf &> /dev/null; then
-          echo "DNF"
-        elif command -v pacman &> /dev/null; then
-          echo "Pacman"
-        elif command -v zypper &> /dev/null; then
-          echo "Zypper"
-        else
-          echo "Unknown package manager"
-        fi
     else
         echo "Nvim version 0.9 or greater is installed"
     fi
@@ -75,3 +97,4 @@ else
     echo "Failed to create symlink."
     fi
 fi
+
