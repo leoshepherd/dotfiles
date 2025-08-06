@@ -35,8 +35,8 @@ fi
 
 echo "Checking neovim installation..."
 if command -v nvim >/dev/null; then
-#    echo "Nvim is Installed, continuing to version check..."
-#else
+    echo "Nvim is Installed, continuing to version check..."
+else
     echo "Nvim is not installed!"
     read -p "Would you like to attempt package manager installation? (y/n) " response
     case "$response" in 
