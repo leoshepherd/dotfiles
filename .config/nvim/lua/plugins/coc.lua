@@ -1,7 +1,7 @@
 return {
     {
         'neoclide/coc.nvim',
-        enabled = true,
+        enabled = false,
         branch = 'release',
     }
 }

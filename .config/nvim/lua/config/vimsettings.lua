@@ -19,3 +19,5 @@ vim.cmd[[filetype plugin indent on]] -- allow auto-indenting depending on file t
 vim.o.mouse=a                        -- enable mouse click
 vim.o.clipboard=unnamedplus          -- using system clipboard
 vim.o.ttyfast = true                 -- Speed up scrolling in Vim
+--completion options for popup menu for builtin LSP
+vim.o.cot = "fuzzy,menu,menuone,noinsert,popup"

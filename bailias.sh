@@ -2,6 +2,7 @@ export PS1='\[\033[36m\] \u\[\033[32m\]  \h:\[\033[31;1m\]  \w\[\033[37
 
 alias vi='nvim'
 alias gs='git status'
+alias gc='git checkout'
 alias ll='ls -la --color=auto'
 
 grs() {
