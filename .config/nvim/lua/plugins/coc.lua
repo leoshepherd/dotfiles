@@ -1,7 +1,6 @@
 return {
-    {
-        'neoclide/coc.nvim',
-        enabled = false,
-        branch = 'release',
-    }
+    'neoclide/coc.nvim',
+    enabled = true,
+    completion =false,
+    branch = 'release',
 }

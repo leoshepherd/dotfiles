@@ -1,9 +1,10 @@
 {
+    "suggest.autoTrigger": "none",
     "kotlin.indexing.enabled": true,
     "kotlin.languageServer.enabled": true,
     "kotlin.compiler.jvm.target": "17",
     "kotlin.completion.snippets.enabled": true,
-    "java.enabled" : true,
+    "java.enabled" : false,
     "java.autobuild.enabled": true,
     "java.codeGeneration.generateComments": false,
     "java.implementationsCodeLens.enabled": true,
