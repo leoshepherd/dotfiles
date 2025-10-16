@@ -1,6 +1,12 @@
 vim.lsp.set_log_level('debug')
 
-vim.lsp.enable({'java'})
+if vim.fn.executable('java') == 1 then
+    vim.lsp.enable({'java'})
+end
+
+if vim.fn.executable( 'lua-language-server' ) == 1 then
+    vim.lsp.enable({'lua'})
+end
 
 vim.diagnostic.config({
     virtual_text = { current_line = true },

@@ -80,7 +80,7 @@
     "python.linting.pylintEnabled": true,
     "codeLens.enable": true,
     "diagnostic.displayByAle": false,
-    "diagnostic.enable": true,
+    "diagnostic.enable": false,
     "diagnostic.enableSign": true,
     "diagnostic.enableHighlightLineNumber": true,
     "diagnostic.autoRefresh": true,

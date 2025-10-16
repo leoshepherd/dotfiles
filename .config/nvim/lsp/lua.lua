@@ -1,10 +1,22 @@
 return {
-    cmd = {},
+    cmd = { 'lua-language-server' },
 
-    root_markers = {},
+    root_markers = { '.luarc.json', '.luarc.jsonc', '.git' },
 
-    filetypes = {},
+    filetypes = { 'lua' },
 
-    settings = {}
+    settings = {
+        Lua = {
+            runtime = {
+                version = 'LuaJIT',
+            },
+            workspace = {
+                checkThirdParty = false,
+                library = {
+                    vim.env.VIMRUNTIME
+                },
+            },
+        },
+    }
 }
 
