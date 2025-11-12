@@ -1,6 +1,6 @@
 return {
     'neoclide/coc.nvim',
-    enabled = true,
-    completion =false,
+    enabled = false,
+    completion = false,
     branch = 'release',
 }

@@ -7,7 +7,8 @@ function ColorMyPencils()
     vim.api.nvim_set_hl(0, "NormalSB", { bg = "none" })
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
     vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "none" })
+    vim.api.nvim_set_hl(0, "NeotreeNormal", { bg = "none" })
+    vim.api.nvim_set_hl(0, "NeotreeNormalNC", { bg = "none" })
 end
 
 ColorMyPencils()
-

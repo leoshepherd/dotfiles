@@ -1,5 +1,5 @@
 local keyset = vim.keymap.set
-local opts = {silent = true, noremap = true, expr = true, replace_keycodes = false}
+local opts = { silent = true, noremap = true, expr = true, replace_keycodes = false }
 
 keyset("n", "<M-h>", "<C-w>h")
 keyset("n", "<M-j>", "<C-w>j")
@@ -34,6 +34,10 @@ else
     end
 end
 
+if require('plugins.neotree') and require('plugins.neotree').enabled then
+    keyset("n", "<space>e", ':Neotree toggle reveal=true position=left<cr>')
+end
+
 if require('plugins.coc').enabled then
     keyset("n", "<space>e", ":CocCommand explorer<cr>")
     keyset("n", "<space>b", ":CocCommand git.showBlameDoc<cr>")
@@ -41,9 +45,9 @@ end
 
 if require("plugins.telescope").enabled then
     -- Telescope keybinds
-    keyset("n", "<space>ff", require('telescope.builtin').find_files, {desc = 'Telescope find files'} )
-    keyset("n", "<space>fg", require('telescope.builtin').git_files, {desc = 'Telescope find git files'} )
-    keyset("n", "<space>lg", require('telescope.builtin').live_grep, {desc = 'Telescope file ripgrep'} )
+    keyset("n", "<space>ff", require('telescope.builtin').find_files, { desc = 'Telescope find files' })
+    keyset("n", "<space>fg", require('telescope.builtin').git_files, { desc = 'Telescope find git files' })
+    keyset("n", "<space>lg", require('telescope.builtin').live_grep, { desc = 'Telescope file ripgrep' })
 end
 
 keyset("n", "<space>o", ":copen<cr>")
