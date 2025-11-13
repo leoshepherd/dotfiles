@@ -16,7 +16,8 @@ vim.o.wildmenu       = true
 --vim.o.cc = '80'                      -- set an 80 column border for good coding style
 vim.o.splitright     = true
 vim.cmd [[filetype plugin indent on]] -- allow auto-indenting depending on file type
-vim.o.clipboard = unnamedplus        -- using system clipboard
-vim.o.ttyfast = true                 -- Speed up scrolling in Vim
+vim.o.clipboard = "unnamedplus"       -- using system clipboard
+vim.o.ttyfast = true                  -- Speed up scrolling in Vim
+vim.o.winborder = 'rounded'
 --completion options for popup menu for builtin LSP
 vim.o.cot = "fuzzy,menu,menuone,noinsert,popup,noselect"

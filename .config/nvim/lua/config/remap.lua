@@ -38,6 +38,10 @@ if require('plugins.neotree') and require('plugins.neotree').enabled then
     keyset("n", "<space>e", ':Neotree toggle reveal=true position=left<cr>')
 end
 
+if require('plugins.gitsigns') and require('plugins.gitsigns').enabled then
+    keyset("n", "<space>b", ":Gitsign blame_line<cr>")
+end
+
 if require('plugins.coc').enabled then
     keyset("n", "<space>e", ":CocCommand explorer<cr>")
     keyset("n", "<space>b", ":CocCommand git.showBlameDoc<cr>")
