@@ -1,10 +1,17 @@
 source ~/dotfiles/prompt/pastel.sh
-export PS1=$'$(_fg ${USER_BG})$(_fg ${USER_TEXT})$(_bg ${USER_BG}) \u$(_fg ${USER_BG})$(_bg ${DIR_BG})$(_fg ${DIR_TEXT})  \w$(_fg ${DIR_BG})$(_bg ${SEP_BG1})$(_fg ${SEP_BG1})$(_bg ${SEP_BG2})$(_fg ${SEP_BG2})$(_bg ${SEP_BG3})$(_fg ${SEP_BG3})$(_bg ${GIT_BG})$(_fg ${GIT_TEXT})$(parse_git_branch)\e[0m$(_fg ${GIT_BG})\e[0m\n '
+export PS1=$'$(_fg ${HOST_BG})$(_fg ${HOST_TEXT})$(_bg ${HOST_BG})  \h$(_fg ${HOST_BG})$(_bg ${USER_BG})\
+$(_fg ${USER_TEXT})  \u$(_fg ${USER_BG})$(_bg ${DIR_BG})\
+$(_fg ${DIR_TEXT})  \w$(_fg ${DIR_BG})$(_bg ${SEP_BG1})\
+$(_fg ${SEP_BG1})$(_bg ${SEP_BG2})\
+$(_fg ${SEP_BG2})$(_bg ${GIT_BG})\
+$(_fg ${GIT_TEXT})$(parse_git_branch)\e[0m$(_fg ${GIT_BG})\e[0m\n '
 
 alias vi='nvim'
 alias gs='git status -sb'
 alias gc='git checkout'
 alias ll='ls -la --color=auto'
+alias sbrc='source ~/.bashrc'
+alias ebrc='vi ~/.bashrc && source ~/.bashrc'
 
 _fg() {
     hex=${1#\#}
