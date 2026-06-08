@@ -32,42 +32,45 @@ return {
         "nvim-tree/nvim-web-devicons", -- optional, but recommended
     },
     lazy = false,                      -- neo-tree will lazily load itsel
-    opts = {
-        popup_border_style = 'rounded',
-        window = {
-            position = 'left',
-            width = 45,
-            mappings = {
-                ['l'] = 'open',
-                ['L'] = function(state)
-                    local node = state.tree:get_node()
-                    local path = node:get_id()
-                    if node.type == 'directory' then
-                        recursive_dir_expansion(state, node, 100)
-                        require('neo-tree.ui.renderer').redraw(state)
-                    else
-                        require('neo-tree.utils').open_file(state, path)
-                    end
-                end,
-                ['<cr>'] = function(state)
-                    local node = state.tree:get_node()
-                    local path = node:get_id()
-                    if node.type == 'directory' then
-                        vim.api.nvim_set_current_dir(path)
-                    else
-                        require('neo-tree.utils').open_file(state, path)
-                    end
-                end,
-                ['h'] = 'close_node',
-                ['H'] = 'close_all_subnodes',
-                ['e'] = 'open_vsplit',
-                ['E'] = 'open_vsplit',
-                ['g.'] = 'toggle_hidden',
-                ['d'] = 'noop',
-                ['df'] = 'delete',
-                ['a'] = { 'add', config = { show_path = 'relative' } },
-                ['A'] = { 'add_directory', config = { show_path = 'relative' } },
+    config = function() 
+    	vim.keymap.set("n", "<leader>e", ':Neotree toggle reveal=true position=left<cr>')
+	    require("neo-tree").setup({
+            popup_border_style = 'rounded',
+            window = {
+                position = 'left',
+                width = 45,
+                mappings = {
+                    ['l'] = 'open',
+                    ['L'] = function(state)
+                        local node = state.tree:get_node()
+                        local path = node:get_id()
+                        if node.type == 'directory' then
+                            recursive_dir_expansion(state, node, 100)
+                            require('neo-tree.ui.renderer').redraw(state)
+                        else
+                            require('neo-tree.utils').open_file(state, path)
+                        end
+                    end,
+                    ['<cr>'] = function(state)
+                        local node = state.tree:get_node()
+                        local path = node:get_id()
+                        if node.type == 'directory' then
+                            vim.api.nvim_set_current_dir(path)
+                        else
+                            require('neo-tree.utils').open_file(state, path)
+                        end
+                    end,
+                    ['h'] = 'close_node',
+                    ['H'] = 'close_all_subnodes',
+                    ['e'] = 'open_vsplit',
+                    ['E'] = 'open_vsplit',
+                    ['g.'] = 'toggle_hidden',
+                    ['d'] = 'noop',
+                    ['df'] = 'delete',
+                    ['a'] = { 'add', config = { show_path = 'relative' } },
+                    ['A'] = { 'add_directory', config = { show_path = 'relative' } },
+                },
             },
-        },
-    },
+        })
+    end,
 }

@@ -1,5 +1,3 @@
-vim.lsp.set_log_level('debug')
-
 if vim.fn.executable('java') == 1 then
     vim.lsp.enable({'java'})
 end

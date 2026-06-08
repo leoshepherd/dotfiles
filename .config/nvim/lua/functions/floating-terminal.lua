@@ -49,3 +49,5 @@ function _G.open_floating_terminal()
 end
 
 vim.api.nvim_create_user_command("Floaterminal", open_floating_terminal, {})
+
+vim.keymap.set("n", "<leader>t", open_floating_terminal )

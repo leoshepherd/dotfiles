@@ -51,5 +51,6 @@ return {
                 col = 1
             },
         }
+	vim.keymap.set("n", "<leader>b", ":Gitsign blame_line<cr>")
     end,
 }
