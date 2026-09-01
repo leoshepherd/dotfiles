@@ -19,3 +19,4 @@ vim.o.ttyfast = true                  -- Speed up scrolling in Vim
 vim.o.winborder = 'rounded'
 --completion options for popup menu for builtin LSP
 vim.o.cot = "fuzzy,menu,menuone,noinsert,popup,noselect"
+vim.opt.termguicolors  = true

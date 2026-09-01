@@ -1,4 +1,4 @@
-source ~/dotfiles/prompt/pastel.sh
+source ~/dotfiles/prompt/caelestia-shell.sh
 export PS1=$'$(_fg ${HOST_BG})$(_fg ${HOST_TEXT})$(_bg ${HOST_BG})  \h$(_fg ${HOST_BG})$(_bg ${USER_BG})\
 $(_fg ${USER_TEXT})  \u$(_fg ${USER_BG})$(_bg ${DIR_BG})\
 $(_fg ${DIR_TEXT})  \w$(_fg ${DIR_BG})$(_bg ${SEP_BG1})\

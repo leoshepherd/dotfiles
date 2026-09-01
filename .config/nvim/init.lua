@@ -1,6 +1,6 @@
+require('config.vimsettings')
+require('config.remap')
 require('config.lazy')
 require('config.lsp')
 require('functions.floating-terminal')
 require('functions.lsp-status')
-require('config.remap')
-require('config.vimsettings')
