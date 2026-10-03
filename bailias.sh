@@ -38,7 +38,7 @@ grh() {
 }
 
 die() {
-    if [ -z $(pgrep -f $1) ]; then
+    if [[ -z $(pgrep -f $1) ]]; then
         printf "No $1 processes...\n"
     else
         printf "Killing all $1 processes... \n"
