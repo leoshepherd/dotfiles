@@ -2,9 +2,10 @@ local function recursive_dir_expansion(state, node, max_depth)
     local fs = require('neo-tree.sources.filesystem')
     local max_depth_reached = 1
     local stack = { node }
+
     while next(stack) ~= nil do
         node = table.remove(stack)
-        if node.type == 'directory' then
+        if node.type == 'directory' and not node:is_expanded() then
             fs.toggle_directory(state, node, nil, true, false)
             vim.wait(20)
         end
@@ -32,9 +33,9 @@ return {
         "nvim-tree/nvim-web-devicons", -- optional, but recommended
     },
     lazy = false,                      -- neo-tree will lazily load itsel
-    config = function() 
-    	vim.keymap.set("n", "<leader>e", ':Neotree toggle reveal=true position=left<cr>')
-	    require("neo-tree").setup({
+    config = function()
+        vim.keymap.set("n", "<leader>e", ':Neotree toggle reveal=true position=left<cr>')
+        require("neo-tree").setup({
             popup_border_style = 'rounded',
             window = {
                 position = 'left',
